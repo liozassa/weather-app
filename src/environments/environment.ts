@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  APPLICATION_NAME: 'WeatherApp',
+  VERSION: 'v 0.0.1',
+  CREDIT: '©2021 by Lioz Assa'
 };
 
 /*

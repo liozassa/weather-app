@@ -1,0 +1,32 @@
+.main-content {
+    text-align: center;
+    height: 90vh;
+    .logo {
+        img {
+            width: 30%;
+        }
+    }
+
+    .weather-search {
+        padding: 5vh 10vw;
+    }
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-top: 1px solid gainsboro;
+    height: 10vh;
+    color: gainsboro;
+    font-size: 14px;
+    padding: 10px;
+
+    .version {
+        text-align: left;
+    }
+
+    .credit {
+        text-align: right;
+    
+    }
+}

@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+input {
+    font-size: 14px;
+}
+
+.is-invalid {
+    border-color: red;
+}
+
+.fab { 
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+}
