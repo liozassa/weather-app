@@ -1,0 +1,13 @@
+<label class="weather-search-title">Select the desired location</label>
+<form class="weather-search-form" [formGroup]="weatherForm" (ngSubmit)="onSubmit()">
+    <select #country formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" (change)="onCountrySelected($event)">
+        <option [ngValue]="null" disabled>Select Country</option>
+        <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+    </select>
+    <select formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+        <option [ngValue]="null" disabled>Select City</option>
+        <option *ngFor="let city of getCitiesByCountry()" [ngValue]="city.id">{{city.name}}</option>
+    </select>
+    <input formControlName="units" placeholder="Units (standard, metric, etc)" [ngClass]="{ 'is-invalid': submitted && f.units.errors }">
+    <button class="fab btn-add" type="submit"></button> <!-- [disabled]="!weatherForm.valid" -->
+</form>
