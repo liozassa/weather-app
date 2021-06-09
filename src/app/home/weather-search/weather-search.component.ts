@@ -49,11 +49,6 @@ export class WeatherSearchComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-
-    if (!this.units.includes(this.f.units.value)) {
-      this.f.units.setErrors({'incorrect': true});
-    };
-
     if (this.weatherForm.invalid) {
       console.log('this.f.units.value', this.f.units.value);
       return;

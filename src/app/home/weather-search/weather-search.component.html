@@ -8,6 +8,9 @@
         <option [ngValue]="null" disabled>Select City</option>
         <option *ngFor="let city of getCitiesByCountry()" [ngValue]="city.id">{{city.name}}</option>
     </select>
-    <input formControlName="units" placeholder="Units (standard, metric, etc)" [ngClass]="{ 'is-invalid': submitted && f.units.errors }">
+    <select formControlName="units" [ngClass]="{ 'is-invalid': submitted && f.units.errors }">
+        <option [ngValue]="null" disabled>Select Units</option>
+        <option *ngFor="let unit of units" [ngValue]="unit">{{unit}}</option>
+    </select>
     <button class="fab btn-add" type="submit"></button>
 </form>
