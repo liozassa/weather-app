@@ -1,8 +1,12 @@
 <label class="weather-search-title">Select the desired location</label>
 <form class="weather-search-form" [formGroup]="weatherForm" (ngSubmit)="onSubmit()">
-    <select #country formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" (change)="onCountrySelected($event)">
+    <select formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" (change)="onCountrySelected($event)">
         <option [ngValue]="null" disabled>Select Country</option>
         <option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+    </select>
+    <select formControlName="state" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" (change)="onStateSelected($event)">
+        <option [ngValue]="null" disabled>Select State</option>
+        <option *ngFor="let state of getStateByCountry()" [ngValue]="state">{{state}}</option>
     </select>
     <select formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
         <option [ngValue]="null" disabled>Select City</option>
