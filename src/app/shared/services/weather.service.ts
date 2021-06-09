@@ -36,7 +36,8 @@ export class WeatherService {
         result.weather[0].description,
         result.weather[0].icon,
         result.base,
-        result.main.temp
+        result.main.temp,
+        result.wind.speed
       ));
       this.cities_weatherUpdated.next([...this.cities_weather]);
     });

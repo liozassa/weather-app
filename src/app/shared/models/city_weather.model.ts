@@ -7,6 +7,7 @@ export class CityWeather {
     public weather_description: string,
     public weather_icon: string,
     public weather_units: string,
-    public weather_temp: number
+    public weather_temp: number,
+    public wind_speed: number
   ) {}
 }

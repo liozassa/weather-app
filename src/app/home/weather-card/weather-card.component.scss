@@ -1,6 +1,6 @@
 .weather-card {
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 20% 10% 20% 10%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     padding: 10px;
@@ -29,6 +29,19 @@
 
     .icon {
         margin: auto;
+    }
+
+    .wind {
+        margin: auto;
+
+        img{
+            height: 30px;
+            width: 30px;
+        }
+
+        span {
+            margin: auto;
+        }
     }
 
     .remove {
