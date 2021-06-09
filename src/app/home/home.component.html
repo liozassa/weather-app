@@ -6,5 +6,5 @@
     <weather-search (selectedData)="addCityWeather($event)"></weather-search>
   </div>
   <div class="selected-weather">
-    <weather-card *ngFor="let weather of cities_weather$ | async" [city_weather]="weather"></weather-card>
+    <weather-card *ngFor="let weather of cities_weather$ | async; let i = index" [city_weather]="weather" (remove)="removeCitiesWeather(i)"></weather-card>
   </div>

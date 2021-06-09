@@ -11,4 +11,7 @@
     <div class="icon">
         <img [src]='"http://openweathermap.org/img/w/" + city_weather.weather_icon + ".png"'>
     </div>
+    <div class="remove">
+        <img src='assets/icons/trash.svg' (click)="removeRecord()">
+    </div>
 </div>

@@ -21,4 +21,8 @@ export class HomeComponent implements OnInit {
     this.weatherService.getWeatherByCity(e.city_id, e.units);
   }
 
+  removeCitiesWeather(index: number) {
+    this.weatherService.removeWeather(index);
+  }
+
 }

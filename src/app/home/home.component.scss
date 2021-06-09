@@ -2,7 +2,7 @@
 
 .logo {
     img {
-        width: 30%;
+        width: 20%;
     }
 }
 
@@ -11,5 +11,7 @@
 }
 
 .selected-weather {
-    padding: 2vh 10vw;
+    margin: 2vh 10vw;
+    overflow-y: auto;
+    max-height: 300px;
 }

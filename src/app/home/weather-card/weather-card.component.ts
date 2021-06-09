@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CityWeather } from 'src/app/shared/models/city_weather.model';
 
 @Component({
@@ -10,10 +10,15 @@ export class WeatherCardComponent implements OnInit {
 
   @Input() city_weather: CityWeather;
 
+  @Output() remove: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log('city_weather', this.city_weather);
+  }
+
+  removeRecord() {
+    this.remove.emit();
   }
 
 }

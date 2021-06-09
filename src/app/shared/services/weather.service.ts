@@ -45,4 +45,9 @@ export class WeatherService {
   getWeatherByCityUpdateListener() {
     return this.cities_weatherUpdated.asObservable();
   }
+
+  removeWeather(index: number) {
+    this.cities_weather.splice(index, 1);
+    this.cities_weatherUpdated.next([...this.cities_weather]);
+  }
 }
