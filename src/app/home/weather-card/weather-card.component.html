@@ -1,0 +1,14 @@
+<div class="weather-card">
+    <div class="city">
+        {{city_weather.city_name}}
+    </div>
+    <div class="weather_main">
+        {{city_weather.weather_main}}
+    </div>
+    <div class="weather_temp">
+        {{city_weather.weather_temp}}
+    </div>
+    <div class="icon">
+        <img [src]='"http://openweathermap.org/img/w/" + city_weather.weather_icon + ".png"'>
+    </div>
+</div>

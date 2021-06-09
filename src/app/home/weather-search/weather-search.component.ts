@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { City } from '../../shared/models/city.model';
 import { WeatherService } from '../../shared/services/weather.service';
 
@@ -13,10 +12,11 @@ export class WeatherSearchComponent implements OnInit {
   weatherForm: FormGroup;
   submitted: boolean;
   units = ['standard', 'metric', 'imperial'];
-
   cities: City[];
   countries: string[];
   selected_country: string;
+
+  @Output() selectedData: EventEmitter<any> = new EventEmitter();
 
   get f() { return this.weatherForm.controls; }
 
@@ -61,7 +61,11 @@ export class WeatherSearchComponent implements OnInit {
 
     // Clear the form for further use.
     this.submitted = false;
-    console.log(this.weatherForm.value); // For test.
+    const city_data = {
+      city_id: this.f.city.value,
+      units: this.f.units.value
+    };
+    this.selectedData.emit(city_data);
     this.weatherForm.reset();
   }
 

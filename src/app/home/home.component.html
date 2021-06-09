@@ -3,8 +3,8 @@
     <img src="assets/images/logo.png" >
   </div>
   <div class="weather-search">
-    <weather-search></weather-search>
+    <weather-search (selectedData)="addCityWeather($event)"></weather-search>
   </div>
   <div class="selected-weather">
-    <!-- <weather-card *ngFor="let city of cities$ | async" [city]="city.city" [temperature]="city.temperature" [units]="city.units" [icon]="city.icon"></weather-card>  -->
+    <weather-card *ngFor="let weather of cities_weather$ | async" [city_weather]="weather"></weather-card>
   </div>

@@ -9,5 +9,5 @@
         <option *ngFor="let city of getCitiesByCountry()" [ngValue]="city.id">{{city.name}}</option>
     </select>
     <input formControlName="units" placeholder="Units (standard, metric, etc)" [ngClass]="{ 'is-invalid': submitted && f.units.errors }">
-    <button class="fab btn-add" type="submit"></button> <!-- [disabled]="!weatherForm.valid" -->
+    <button class="fab btn-add" type="submit"></button>
 </form>
